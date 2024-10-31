@@ -1,0 +1,49 @@
+# # Logs
+# logs
+# *.log
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
+# pnpm-debug.log*
+# lerna-debug.log*
+
+# node_modules
+# dist
+# dist-ssr
+# *.local
+
+# # Editor directories and files
+# .vscode/*
+# !.vscode/extensions.json
+# .idea
+# .DS_Store
+# *.suo
+# *.ntvs*
+# *.njsproj
+# *.sln
+# *.sw?
+# ../12-axios/
+# ../13-store-project/
+# ../14-hooks/
+# ../16-redux-toolkit/
+# ../Crypto-App/
+# ../book-app/
+# ../contact-app/
+# ../context/
+# ../react-concepts/
+# ../react-side-effect/
+# ../redux/
+# ../useReducer-hook/
+../12-axios/
+../13-store-project/
+../14-hooks/
+../16-redux-toolkit/
+../Crypto-App/
+../book-app/
+../contact-app/
+../context/
+../react-concepts/
+../react-side-effect/
+../redux/
+../useReducer-hook/
+
