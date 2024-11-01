@@ -1,27 +1,27 @@
 import BasketCard from "../components/BasketCard";
-import { useCart } from "../context/CartContext";
+// import { useCart } from "../context/CartContext";
 import BasketSidebar from "../components/BasketSidebar";
 
 import styles from "./CheckoutPage.module.css";
 
 function CheckoutPage() {
-  const [state, dispatch] = useCart();
+  // const [state, dispatch] = useCart();
 
-  const clickHandler = (type, payload) =>
-    dispatch({ type: type, payload: payload });
+  // const clickHandler = (type, payload) =>
+  //   dispatch({ type: type, payload: payload });
   // console.log(state);
 
-  if (!state.itemsCounter) {
-    return (
-      <div className={styles.container}>
-        <p>Empty</p>
-      </div>
-    );
-  }
+  // if (!state.itemsCounter) {
+  //   return (
+  //     <div className={styles.container}>
+  //       <p>Empty</p>
+  //     </div>
+  //   );
+  // }
   return (
     <div className={styles.container}>
       <BasketSidebar state={state} clickHandler={clickHandler} />
-      <div className={styles.products}>
+      {/* <div className={styles.products}>
         {state.selectedItems.map((product) => (
           <BasketCard
             key={product.id}
@@ -29,7 +29,7 @@ function CheckoutPage() {
             clickHandler={clickHandler}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

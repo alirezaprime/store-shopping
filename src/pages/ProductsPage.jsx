@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useProducts } from "../context/ProductContext";
+// import { useProducts } from "../context/ProductContext";
 
 import Card from "../components/Card";
 import Loader from "../components/Loader";
@@ -20,7 +20,8 @@ function ProductsPage() {
   const [query, setQuery] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const products = useProducts();
+  // const products = useProducts();
+  const products = [];
 
   useEffect(() => {
     setDisplayed(products);
