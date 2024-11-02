@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 // import { useProducts } from "../context/ProductContext";
 
 import Card from "../components/Card";
 import Loader from "../components/Loader";
+import { fetchProducts } from "../features/product/productSlice";
 
 import Styles from "./ProductsPage.module.css";
 import {
@@ -15,13 +17,17 @@ import SearchBox from "../components/SearchBox";
 import SideBar from "../components/SideBar";
 
 function ProductsPage() {
+  // const products = useProducts();
+  const dispatch = useDispatch();
+  const { products, loading } = useSelector((store) => store.product);
+  const store = useSelector((store) => store.product);
+  console.log(store);
+  // const products = [];
+
   const [search, setSearch] = useState("");
   const [displayed, setDisplayed] = useState([]);
   const [query, setQuery] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
-
-  // const products = useProducts();
-  const products = [];
 
   useEffect(() => {
     setDisplayed(products);
@@ -34,6 +40,10 @@ function ProductsPage() {
     /////////////فانکشن مربوطه اش هست : getInitialQuery///////////////////////////
     setQuery(getInitialQuery(searchParams));
   }, [products]);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
 
   useEffect(() => {
     setSearchParams(query);
@@ -73,7 +83,7 @@ function ProductsPage() {
       </div> */}
       <div className={Styles.container}>
         <div className={Styles.products}>
-          {!displayed.length && <Loader />}
+          {loading && <Loader />}
           {displayed.map((p) => (
             <Card key={p.id} data={p} />
             // <p key={p.id}>{p.title}</p>
