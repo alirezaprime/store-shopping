@@ -17,10 +17,6 @@ import {
 // import { useCart } from "../context/CartContext";
 
 function Card({ data }) {
-  // const clickHandler = (type) => {
-  //   // dispatch({ type: type, payload: data });
-  // };
-
   const { id, title, image, price } = data;
   // const [state, dispatch] = useCart();
   const state = useSelector((store) => store.cart);
@@ -40,41 +36,21 @@ function Card({ data }) {
         </Link>
         <div>
           {quantity === 1 && (
-            <button
-              onClick={() => {
-                dispatch(removeItem(data));
-              }}
-            >
+            <button onClick={() => dispatch(removeItem(data))}>
               <MdDeleteOutline />
             </button>
           )}
 
           {quantity > 1 && (
-            <button
-              onClick={() => {
-                dispatch(decrease(data));
-              }}
-            >
-              -
-            </button>
+            <button onClick={() => dispatch(decrease(data))}>-</button>
           )}
           {!!quantity && <span>{quantity}</span>}
           {quantity === 0 ? (
-            <button
-              onClick={() => {
-                dispatch(addItem(data));
-              }}
-            >
+            <button onClick={() => dispatch(addItem(data))}>
               <TbShoppingBagCheck />
             </button>
           ) : (
-            <button
-              onClick={() => {
-                dispatch(increase(data));
-              }}
-            >
-              +
-            </button>
+            <button onClick={() => dispatch(increase(data))}>+</button>
           )}
         </div>
       </div>
