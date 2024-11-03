@@ -12,7 +12,7 @@ const fetchProducts = createAsyncThunk("product/fetchProducts", () => {
 });
 
 const productsSlice = createSlice({
-  name: "",
+  name: "product",
   initialState: initialState,
   extraReducers: (bildder) => {
     bildder.addCase(fetchProducts.pending, (state) => {

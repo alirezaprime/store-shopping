@@ -10,22 +10,22 @@ import styles from "./Card.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
   addItem,
-  decrease,
   removeItem,
   increase,
+  decrease,
 } from "../features/cart/cartSlice";
 // import { useCart } from "../context/CartContext";
 
 function Card({ data }) {
-  const clickHandler = (type) => {
-    // dispatch({ type: type, payload: data });
-  };
+  // const clickHandler = (type) => {
+  //   // dispatch({ type: type, payload: data });
+  // };
 
   const { id, title, image, price } = data;
   // const [state, dispatch] = useCart();
   const state = useSelector((store) => store.cart);
   const dispatch = useDispatch();
-  console.log(store);
+  // console.log(store);
 
   const quantity = productQuantity(state, id);
   // console.log(quantity);

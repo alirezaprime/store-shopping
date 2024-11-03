@@ -40,17 +40,15 @@ const getInitialQuery = (searchParams) => {
   return query;
 };
 
-const sumProducts = (products) => {
-  return { itemsCounter: itemsCounter, total: total };
-};
-
 const sumPrice = (products) => {
+  // total convert to this
   return products
     .reduce((total, product) => total + product.price * product.quantity, 0)
     .toFixed(2);
 };
 
 const sumQuantity = (products) => {
+  //itemsCounter convert to this
   return products.reduce((counter, product) => counter + product.quantity, 0);
 };
 

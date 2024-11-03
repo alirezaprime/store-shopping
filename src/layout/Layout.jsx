@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import styles from "./Layout.module.css";
 
 function Layout({ children }) {
-  // const [state] = useCart();
   const state = useSelector((store) => store.cart);
   return (
     <>
